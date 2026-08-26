@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | CleanTrack</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body class="dashboard-page">
+    <header class="dashboard-navbar">
+        <a href="/" class="logo">CleanTrack</a>
+        <nav class="dashboard-nav">
+            {{NAV_LINKS}}
+        </nav>
+    </header>
+    <main class="dashboard-main">
+        <!-- Welcome Section -->
+        <section class="dashboard-header">
+            <p class="section-title">MY CLEANTRACK</p>
+            <h1 id="welcome-heading">Welcome back!</h1>
+            <p>View and monitor your waste reports below.</p>
+        </section>
+
+        <!-- Statistics -->
+        <section class="dashboard-stats">
+            <div class="stat-card">
+                <span class="stat-number" id="total-reports">0</span>
+                <span class="stat-label">Total Reports</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number" id="pending-reports">0</span>
+                <span class="stat-label">Pending</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number" id="in-progress-reports">0</span>
+                <span class="stat-label">In Progress</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number" id="resolved-reports">0</span>
+                <span class="stat-label">Resolved</span>
+            </div>
+        </section>
+
+        <!-- Reports -->
+        <section class="dashboard-reports">
+            <div class="section-heading">
+                <p class="section-title">REPORTS</p>
+                <h2>Waste Reports</h2>
+            </div>
+            <div id="reports-container"></div>
+        </section>
+        <!-- Main Action -->
+        <div class="dashboard-action">
+            <a href="/report" class="button primary-button">
+                + Submit New Report
+            </a>
+        </div>
+    </main>
+</body>
+</html>
