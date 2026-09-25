@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body class="login-page">
+    <main class="login-container">
+
+        <!-- Left Side -->
+        <section class="login-brand">
+            <a href="/" class="login-logo">CleanTrack</a>
+            <div class="brand-content">
+                <p class="section-title">WASTE MANAGEMENT REPORTING</p>
+                <h1>Cleaner communities start with action.</h1>
+                <p>
+                    Report waste problems, monitor their progress,
+                    and help create cleaner surroundings in your community.
+                </p>
+            </div>
+            <p class="brand-footer">Together, we can make a difference.</p>
+        </section>
+
+        <!-- Right Side -->
+        <section class="login-form-section">
+            <div class="login-form-container">
+                <p class="section-title">WELCOME BACK</p>
+                <h2>Log in to your account</h2>
+                <p class="login-description">Enter your details to continue to CleanTrack.</p>
+                {{LOGIN_ERROR}}
+                <form action="/login" method="POST">
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="Enter your email"
+                            required
+                        >
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            placeholder="Enter your password"
+                            required
+                        >
+                    </div>
+                    <button type="submit" class="button login-button">Login</button>
+                </form>
+
+                <p class="register-text">
+                    Don't have an account?
+                    <a href="/register">Create an account</a>
+                </p>
+                <a href="/" class="back-home">← Back to Home</a>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | CleanTrack</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body class="dashboard-page">
+    <header class="dashboard-navbar">
+        <a href="/" class="logo">CleanTrack</a>
+        <nav class="dashboard-nav">
+            <a href="/dashboard">My Dashboard</a>
+            <a href="/">Home</a>
+            <a href="/logout">Logout</a>
+        </nav>
+    </header>
+    <main class="dashboard-main">
+        <section class="dashboard-header">
+            <p class="section-title">CLEANTRACK MONITORING</p>
+            <h1>Admin Dashboard</h1>
+            <p>Monitor and manage community waste reports.</p>
+        </section>
+            
+        <section class="dashboard-stats">
+            <div class="stat-card">
+                <span class="stat-number" id="total-reports">0</span>
+                <span class="stat-label">Total Reports</span>
+            </div>
+
+            <div class="stat-card">
+                <span class="stat-number" id="pending-reports">0</span>
+                <span class="stat-label">Pending</span>
+            </div>
+
+            <div class="stat-card">
+                <span class="stat-number" id="in-progress-reports">0</span>
+                <span class="stat-label">In Progress</span>
+            </div>
+
+            <div class="stat-card">
+                <span class="stat-number" id="resolved-reports">0</span>
+                <span class="stat-label">Resolved</span>
+            </div>
+        </section>
+
+        <section class="report-search">
+            <form action="/admin" method="GET">
+                <div class="search-field">
+                    <label for="location">Search by location</label>
+                    <input
+                        type="text"
+                        id="location"
+                        name="location"
+                        placeholder="Enter a location"
+                        value="{{LOCATION_SEARCH}}"
+                    >
+                </div>
+                <div class="search-field">
+                    <label for="status">Filter by status</label>
+                    <select id="status" name="status">
+                        <option
+                            value=""
+                            {{ALL_SELECTED}}
+                        >
+                            All
+                        </option>
+
+                        <option
+                            value="Pending"
+                            {{PENDING_SELECTED}}
+                            >
+                                Pending
+                        </option>
+
+                        <option
+                            value="In Progress"
+                            {{IN_PROGRESS_SELECTED}}
+                        >
+                            In Progress
+                        </option>
+
+                        <option
+                            value="Resolved"
+                            {{RESOLVED_SELECTED}}
+                        >
+                            Resolved
+                        </option>
+                    </select>
+                </div>
+                <div class="search-field">
+                    <label for="priority">Filter by priority</label>
+                    <select id="priority" name="priority">
+                        <option
+                            value=""
+                            {{ALL_PRIORITY_SELECTED}}
+                        >
+                            All
+                        </option>
+
+                        <option
+                            value="Low"
+                            {{LOW_SELECTED}}
+                        >
+                            Low
+                        </option>
+
+                        <option
+                            value="Medium"
+                            {{MEDIUM_SELECTED}}
+                        >
+                            Medium
+                        </option>
+
+                        <option
+                            value="High"
+                            {{HIGH_SELECTED}}
+                        >
+                            High
+                        </option>
+                    </select>
+                </div>
+                <button type="submit" class="button">
+                    Apply Filters
+                </button>
+            </form>
+        </section>
+
+        <section class="dashboard-reports">
+            <div class="section-heading">
+                <p class="section-title">ALL REPORTS</p>
+                <h2>Waste Reports</h2>
+            </div>
+            <div id="reports-container"></div>
+        </section>
+    </main>
+</body>
+</html>

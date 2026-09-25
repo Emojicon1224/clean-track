@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Report | CleanTrack</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <main class="report-page">
+        <section class="report-container">
+            <a href="/dashboard" class="back-dashboard">
+                ← Back to Reports
+            </a>
+            <p class="section-title">EDIT REPORT</p>
+            <h1>Edit Waste Report</h1>
+
+            <form action="/edit-report" method="POST" class="report-form">
+
+                <input type="hidden" name="report_id" id="report_id" value="{{REPORT_ID}}">
+
+                <div class="form-group">
+                    <label for="location">Location</label>
+                    <input type="text" id="location" name="location" value="{{LOCATION}}" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="problem">Waste Problem</label>
+                    <select
+                        id="problem"
+                        name="problem"
+                        required
+                    >
+                        <option value="Uncollected waste" {{UNCOLLECTED_WASTE_SELECTED}}>Uncollected Waste</option>
+                        <option value="Illegal dumping" {{ILLEGAL_DUMPING_SELECTED}}>Illegal Dumping</option>
+                        <option value="Overflowing garbage" {{OVERFLOWING_GARBAGE_SELECTED}}>Overflowing Garbage</option>
+                        <option value="Blocked drainage" {{BLOCKED_DRAINAGE_SELECTED}}>Blocked Drainage</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <textarea id="description" name="description" required>{{DESCRIPTION}}</textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="priority">Priority</label>
+                    <select id="priority" name="priority" required>
+                        <option value="Low" {{LOW_SELECTED}}>Low</option>
+                        <option value="Medium" {{MEDIUM_SELECTED}}>Medium</option>
+                        <option value="High" {{HIGH_SELECTED}}>High</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="button">Save Changes</button>
+            </form>
+        </section>
+    </main>
+</body>
+</html>

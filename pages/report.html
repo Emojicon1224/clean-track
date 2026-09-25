@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+    <title>Submit Report | CleanTrack</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <main class="report-page">
+        <section class="report-container">
+            <a href="/dashboard" class="back-dashboard">
+                ← Back to Dashboard
+            </a>
+            <p class="section-title">WASTE REPORT</p>
+            <h1>Report a Waste Problem</h1>
+            <p class="report-description">
+                Tell us about a waste management problem in your community.
+            </p>
+
+            <form action="/reports" method="POST" class="report-form">
+                <div class="form-group">
+                    <label for="location">Location</label>
+                    <input
+                        type="text"
+                        id="location"
+                        name="location"
+                        placeholder="Enter the location"
+                        required
+                    >
+                </div>
+                <div class="form-group">
+                    <label for="problem">Waste Problem</label>
+                    <select
+                        id="problem"
+                        name="problem"
+                        required
+                    >
+                        <option value="">Select a problem</option>
+                        <option value="Uncollected waste">Uncollected Waste</option>
+                        <option value="Illegal dumping">Illegal Dumping</option>
+                        <option value="Overflowing garbage">Overflowing Garbage</option>
+                        <option value="Blocked drainage">Blocked Drainage</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <textarea
+                        id="description"
+                        name="description"
+                        placeholder="Describe the waste problem..."
+                        rows="6"
+                        required
+                    ></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="priority">Priority</label>
+                    <select
+                        id="priority"
+                        name="priority"
+                        required
+                    >
+                        <option value="">Select Priority</option>
+                        <option value="Low">Low</option>
+                        <option value="Medium">Medium</option>
+                        <option value="High">High</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="button">Submit Report</button>
+
+            </form>
+        </section>
+    </main>
+</body>
+</html>

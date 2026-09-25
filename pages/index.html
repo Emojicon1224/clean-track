@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CleanTrack | Waste Management</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="/" class="logo">CleanTrack</a>
+            <div class="nav-links">
+                {{NAV_LINKS}}
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <p class="section-title">WASTE MANAGEMENT REPORTING</p>
+                <h1>
+                    Cleaner communities <span>start with action.</span>
+                </h1>
+                <p class="hero-text">
+                    Report waste-related problems in your community,
+                    track their progress, and help create cleaner surroundings.
+                </p>
+                <div class="hero-buttons">
+                    <a href="/login" class="button primary-button" id="report-problem-button">
+                        Report a Problem
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="how-it-works">
+            <div class="section-heading">
+                <p class="section-title">HOW IT WORKS</p>
+                <h2>From report to resolution.</h2>
+                <p>
+                    CleanTrack makes it easier to report and monitor
+                    waste management problems.
+                </p>
+            </div>
+            <div class="steps">
+                <article class="step-card">
+                    <div class="step-number">01</div>
+                    <h3>Report</h3>
+                    <p>Submit information about a waste problem in your area.</p>
+                </article>
+
+                <article class="step-card">
+                    <div class="step-number">02</div>
+                    <h3>Track</h3>
+                    <p>Monitor the status and progress of your submitted report.</p>
+                </article>
+
+                <article class="step-card">
+                    <div class="step-number">03</div>
+                    <h3>Resolve</h3>
+                    <p>Follow reports as waste problems are addressed and resolved.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="cta">
+            <h2>See a waste problem?</h2>
+            <p>Your report could be the first step toward getting it addressed.</p>
+            <a href="/login" class="button secondary-button" id="get-started-button">Get Started</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 CleanTrack. Waste Management Reporting & Monitoring System.</p>
+    </footer>
+</body>
+</html>
